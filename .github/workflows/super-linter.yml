@@ -22,13 +22,13 @@ jobs:
           fetch-depth: 0
 
       - name: Lint Code Base
-        uses: github/super-linter@v4
+        uses: github/super-linter/slim@v4
         env:
           # Validate only new pull requests
           VALIDATE_ALL_CODEBASE: false
           # Uncommenting the following enables linting for only Python and bash files
           # VALIDATE_PYTHON: true
-          # VALIDATE_BASH: true
-          # VALIDATE_BASH_EXEC: true
+          VALIDATE_BASH: false
+          VALIDATE_BASH_EXEC: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
